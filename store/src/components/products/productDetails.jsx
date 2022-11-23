@@ -6,7 +6,7 @@ import {ReviewForm} from "./reviewForm";
 //Navigation
 const Naviagation = ({name}) =>
    <>
-        <div className="navbar container-lg bg-light rounded mb-3">
+        <div className="navbar container-lg bg-light rounded mb-3 p-lg-2">
             <ol className="breadcrumb">
                 <li className="breadcrumb-item"><a href="#" className="text-decoration-none text-primary">Tasty Snacks</a></li>
                 <li className="breadcrumb-item active" aria-current="page">{name}</li>
