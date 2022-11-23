@@ -2,12 +2,13 @@ import {CartContextProvider} from "./context/CartContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {routes} from "./routes";
 
+
 function App() {
   return (
       <CartContextProvider>
         <BrowserRouter>
             {/* TODO: Style header and make link navigate to Product List*/}
-          <header>Store</header>
+          <header className={"navbar container-lg text-light bg-dark mb-3"}>Store</header>
             <Routes>
                 <Route>
                     {
