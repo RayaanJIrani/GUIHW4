@@ -8,7 +8,7 @@ function App() {
       <CartContextProvider>
         <BrowserRouter>
             {/* TODO: Style header and make link navigate to Product List*/}
-          <header className={"navbar container-lg text-light bg-dark mb-3"}>Store</header>
+          <header className={"navbar container-lg text-light bg-dark"}>Store</header>
             <Routes>
                 <Route>
                     {
