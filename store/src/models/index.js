@@ -1,4 +1,4 @@
 export * from './products';
 export * from './productReviews';
 export * from './Cart';
-export * from './CartItems';
+export * from './CartItem';
