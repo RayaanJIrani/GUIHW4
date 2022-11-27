@@ -1,14 +1,14 @@
 import {CartContextProvider} from "./context/CartContext";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes, Navigate, Link} from "react-router-dom";
 import {routes} from "./routes";
+
 
 
 function App() {
   return (
       <CartContextProvider>
         <BrowserRouter>
-            {/* TODO: Style header and make link navigate to Product List*/}
-          <header className={"navbar container-lg text-light bg-dark p-lg-2"}>Store</header>
+            <header className={"navbar container-lg bg-dark text-white p-3 align-middle"}><Link to={'/'} className = "text-white text-decoration-none">Store</Link></header>
             <Routes>
                 <Route>
                     {
@@ -19,6 +19,10 @@ function App() {
         </BrowserRouter>
       </CartContextProvider>
   );
+}
+
+function clickHandler() {
+    console.log("clicked");
 }
 
 export default App;

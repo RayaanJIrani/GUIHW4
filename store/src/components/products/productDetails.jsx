@@ -2,11 +2,12 @@ import {getProductById} from "../../api/productsAPI";
 import {useState, useEffect} from "react";
 import {ReviewList} from "./reviewList";
 import {ReviewForm} from "./reviewForm";
+import {useParams} from "react-router-dom";
 
 //Navigation
 const Naviagation = ({name}) =>
    <>
-        <div className="navbar container-lg bg-light rounded mb-3 p-lg-2">
+        <div className="navbar container-lg bg-light rounded mb-3 p-lg-2 align-middle">
             <ol className="breadcrumb">
                 <li className="breadcrumb-item"><a href="#" className="text-decoration-none text-primary">Tasty Snacks</a></li>
                 <li className="breadcrumb-item active" aria-current="page">{name}</li>
@@ -31,10 +32,12 @@ const ProductInfo = ({name, price, description, imgUrl}) =>
 
 export const ProductDetails = () => {
     const [product, setProduct] = useState({});
+    let {productId} = useParams();
+
 
     //Calls the API
     useEffect(() => {
-        getProductById(1).then(x => setProduct(x)); //hardcoded id
+        getProductById(productId).then(x => setProduct(x)); //hardcoded id
     },[]);
 
 
