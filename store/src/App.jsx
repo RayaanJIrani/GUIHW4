@@ -1,5 +1,5 @@
 import {CartContextProvider} from "./context/CartContext";
-import {BrowserRouter, Route, Routes, Navigate, Link} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
 import {routes} from "./routes";
 
 
