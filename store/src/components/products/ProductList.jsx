@@ -19,11 +19,19 @@ const AddToCartButton = ({product}) => {
     );
 }
 
+const RenderImage = ({product}) => {
+    let productBadCode = product;
+    let imgUrl = productBadCode.imageUrl;
+    return (
+        <img src={imgUrl} alt="Product Image" className="img-fluid"/>
+    );
+}
+
 const ProductCard = ({product}) => {
-    const {id, name, imageURL, price} = product;
+    const {id, name, price} = product;
     return (
         <div className="card col-12 col-md-6 col-lg-4 col-xl-3 p-2">
-            <img src={imageURL} className="card-img-top" alt={"Image of: " + name }/>
+            <RenderImage product={product}/>
             <div className="card-body">
                 <p className="card-text rounded bg-success text-white">${price}</p>
                 <h5 className="card-title text-center">{name}</h5>
@@ -40,8 +48,9 @@ export const ProductList = () => {
     useEffect(() => {
         getProducts().then(x => setProducts(x));
     }, []);
+    let exampleOfFirstthing = products[0];
+    console.log(exampleOfFirstthing.imageUrl);
 
-    console.log(products);
 
     return <>
         {/*Note: this works from a view perspective but, is not strictly a breadcrumb*/}
@@ -55,6 +64,5 @@ export const ProductList = () => {
                 }
             </div>
         </div>
-
     </>
 }
