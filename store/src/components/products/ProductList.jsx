@@ -21,7 +21,7 @@ const AddToCartButton = ({product}) => {
 
 const PriceButton = ({price}) => {
     return (
-        <p className="card-text rounded bg-success text-white p-0 m-0 col-2">${price}</p>
+        <span className="badge bg-success text-white rounded-pill">$ {price}</span>
     );
 }
 
@@ -38,7 +38,7 @@ const ProductCard = ({product}) => {
     return (
         <div className="card col p-2 mx-3 mt-3">
             <div className="card-body">
-                <div className={"row"}>
+                <div className={"position-relative"}>
                     <RenderImage product={product}/>
                     <PriceButton price={price}/>
                 </div>
@@ -59,7 +59,6 @@ export const ProductList = () => {
 
 
     return <>
-        {/*Note: this works from a view perspective but, is not strictly a breadcrumb*/}
         <header className={"navbar container-lg bg-light text-secondary p-3 align-middle"}>
             Tasty Snacks
         </header>
