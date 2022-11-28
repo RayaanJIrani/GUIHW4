@@ -19,6 +19,12 @@ const AddToCartButton = ({product}) => {
     );
 }
 
+const PriceButton = ({price}) => {
+    return (
+        <p className="card-text rounded bg-success text-white p-0 m-0 col-2">${price}</p>
+    );
+}
+
 const RenderImage = ({product}) => {
     let productBadCode = product;
     let imgUrl = productBadCode.imageUrl;
@@ -30,10 +36,12 @@ const RenderImage = ({product}) => {
 const ProductCard = ({product}) => {
     const {id, name, price} = product;
     return (
-        <div className="card col-12 col-md-6 col-lg-4 col-xl-3 p-2">
-            <RenderImage product={product}/>
+        <div className="card col p-2 mx-3 mt-3">
             <div className="card-body">
-                <p className="card-text rounded bg-success text-white">${price}</p>
+                <div className={"row"}>
+                    <RenderImage product={product}/>
+                    <PriceButton price={price}/>
+                </div>
                 <h5 className="card-title text-center">{name}</h5>
             </div>
             <ProductDetailsButton product={product}/>
@@ -48,8 +56,6 @@ export const ProductList = () => {
     useEffect(() => {
         getProducts().then(x => setProducts(x));
     }, []);
-    let exampleOfFirstthing = products[0];
-    console.log(exampleOfFirstthing.imageUrl);
 
 
     return <>
@@ -57,7 +63,7 @@ export const ProductList = () => {
         <header className={"navbar container-lg bg-light text-secondary p-3 align-middle"}>
             Tasty Snacks
         </header>
-        <div className="container-lg bg-light rounded pt-1">
+        <div className="container-lg">
             <div className="row">
                 {
                     products.map((product, index) => <ProductCard key={index} product={product} />)
