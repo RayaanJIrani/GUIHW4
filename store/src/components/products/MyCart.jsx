@@ -20,7 +20,7 @@ export const MyCart = () => {
                         <span>{product.product.name + " - "}</span>
                         <span className="text-muted">${product.product.price}/each</span>
                     </td>
-                    <td className="pt-2 pb-2 col-1 text-dark">{product.totalPrice}</td>
+                    <td className="pt-2 pb-2 col-1 text-dark justify-content-end">{product.totalPrice}</td>
                 </tr>)
             }
             </tbody>
@@ -29,6 +29,5 @@ export const MyCart = () => {
     <div className="container-lg">
         <p className="d-flex justify-content-end fw-bold">$ {cart.total}</p>
     </div>
-        <button onClick={() => addToCart({id: 1, name: "Hail", price: 18.54})}>Add to cart</button>
     </>;
 };
